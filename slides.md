@@ -70,7 +70,7 @@
   height:100%;
   width:100%;
   display: grid;
-  grid-template-columns: 1fr 1fr; /*layout*/
+  grid-template-columns: 1fr 1fr 1fr; /*layout*/
   grid-auto-rows: 1fr; /*same height*/
   grid-gap: 10px;
 }
@@ -86,26 +86,28 @@
   
   <!-- .slide: data-state="no-toc-progress" --> <!-- don't show toc progress bar on this slide -->
 
-# Digital Capital & Star Performers
+# MLE Days 2021
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-<h2 style="text-align: center;">The returns to technological talent and investments in IT-related intangible capital</h2>
+<h2 style="text-align: center;">Machine Learning with Graphs</h2>
 
 <br> 
 
-[Joschka Schwarz][1]
+[Christoph Ihl][1] - [Joschka Schwarz][2] - [Oliver Mork][3]
 
 <br> 
 
 
-2020-02-11 | docsem | TU Hamburg
+2021-07-01 | MLE Days | TU Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
 
 
-[1]: https://www.startupengineer.io/authors/schwarz/
+[1]: https://www.startupengineer.io/authors/ihl/
+[2]: https://www.startupengineer.io/authors/schwarz/
+[3]: https://www.startupengineer.io/authors/mork/
 <!-- [2]: https://www.tuhh.de/alt/sdw -->
 
 
@@ -119,32 +121,23 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Digital Revolution: The five most valuable firms in the S&P 500 are all firms from the TECH industry
+#### Warum Graphen?
 
+
+<p style="text-align:center">Graphen sind eine allgemeine Sprache zum Beschreiben und Analysieren von Entitäten mit Beziehungen/Interaktionen.</p>
+<br>
 <div class="slide-container">
         <!--- Slide container (TOP) --->
         <div class="slide-container-top horizontal">
           <!--- Content Box (1) --->
           <div class="slide-box frame">
             <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/01_motivation/nasdaq.png); height: 90%;"></div>
-            <div style="text-align:center;">NASDAQ Composite Index</div>
-            <div style="text-align:center;font-size:15px;">(heavily weighted towards companies in the information technology sector)</div>
+            <div class="box-img" style="background-image: url(img/01_motivation/02_svg/graph_entities.svg); background-size:80%;"></div>
           </div>
           <!--- Content Box (2) --->
           <div class="slide-box frame">
-            <!--- TEXT --->
-            <div class="box-text">
-              <!--- List (unordered) --->
-              <ul class="square-list">
-                <u>Creative Destruction into the Information Age</u>
-                <li><b>Tech Entrepreneurs</b> such as Page & Brin (Google) and Jobs (Apple) revolutionized the economic structures of many industries and created new markets and organisational business models in a gale of <b>creative destruction</b>. 
-                <p class="reference">(Sombart, ... and Schumpeter, 1942)</p></li>
-                <br>
-                <u>Long-Term economic growth</u>
-                <li>According to Schumpeter’s vision innovative market entry by entrepreneurs was the driving force of <b>sustained long-term economic growth</b>. In Schumpeter’s view this also destroyed the value of established companies that enjoyed some degree of monopoly power (Technology Shift).</li>
-              </ul>
-            </div>
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/01_motivation/02_svg/graph_entities_connected.svg); background-size:80%;"></div>
           </div>
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
@@ -155,45 +148,40 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Much of the rise in the concentration of power in these firms has been attributed to investments related to digital technologies
+#### Viele Arten von Daten sind Graphen (1)
 
 <div class="slide-container">
   <div class="slide-container-top">
     <div class="grid-layout">
         <!--- Box 1 --->
         <div class="slide-box frame">
-          <div class="box-img" style="background-image: url(img/01_motivation/apple_annotated.png); display:flex; align-items:center;margin-left:20px;">
-            <u>Apple</u>
-          </div>
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/event_graph.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Event Graphs</div>
         </div>
         <!--- Box 2 --->
         <div class="slide-box frame">
-            <!--- TEXT --->
-            <div class="box-text" style="font-size:26px;">
-              <!--- List (unordered) --->
-              <ul class="square-list">
-                <li><b>Digital Technologies</b> are held to be important drivers of innovation and economic growth.</li>
-                <li>As the economy becomes increasingly digitized, these assets can be expected to <b>grow even further</b> in importance.</li>
-                <li>Corporations must invest in <b>leading-edge digital technologies</b> to move ahead and outpace competitors.</li>
-              </ul>
-            </div>
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/computer_network.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Computer Netzwerke</div>
         </div>
         <!--- Box 3 --->
         <div class="slide-box frame">
-            <!--- TEXT --->
-            <div class="box-text" style="font-size:24px;">
-              <!--- List (unordered) --->
-              <ul class="square-list">
-                <li>Until now, it is the technology giants that have taken advantage of digital disruption by realizing <b>technology’s power</b> and developing new platform business models to unleash hidden value.</li>
-                <li> Digital laggards (existing incumbents in traditional industries) pay the consequences in lost revenue and customers.</li>
-              </ul>
-            </div>
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/particle_network.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Partikel Netzwerke</div>
         </div>
         <!--- Box 4 --->
         <div class="slide-box frame">
-          <div class="box-img" style="background-image: url(img/01_motivation/bei.png); display:flex; align-items:center;margin-left:20px;">
-            <u>Beiersdorf</u>
-          </div>
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/food_web.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Nahrungsnetze</div>
+        </div>
+        <!--- Box 5 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/disease_pathway.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Übertragungswege (Krankheiten)</div>
+        </div>
+        <!--- Box 6 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/sbahn_hh.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">U-Bahn Netzwerke</div>
         </div>
     </div>
   </div>
@@ -205,72 +193,270 @@
 
 <!-- .slide: class="align-top" -->
             
-#### Differences of DIGITAL CAPITAL across firms may explain differences in performance between new digitally-focused and older firms
+#### Viele Arten von Daten sind Graphen (2)
 
 <div class="slide-container">
-  <!--- Slide container (TOP) --->
-  <div class="slide-container-top horizontal">
-  <!--- Content Box (1) --->
-    <div class="slide-box frame">
-      <!--- IMAGE --->
-      <div class="box-img" style="background-image: url(img/01_motivation/tangible.png);">
-      </div>
-    </div>
-    <!--- Content Box (2) --->
-    <div class="slide-box frame">
-      <!--- TEXT --->
-      <div class="box-text">
-        <!--- List (unordered) --->
-        <ul class="square-list">
-        <li>Firms invest in both physical and digital capital to increase their capacity to produce in future years.</li>
-        <li>Investments in digital capital (such as AI and ML) enable and require significant complementary investments, including business process redesign, co-invention of new products and business models, and <b>investments in human capital</b><p class="reference">Hall, 2001; Brynjolfsson et al., 2002</p>
-        </li>
-        <li>While these assets take time to build, the market value of firms should reflect the expected net present value of the cash flows they can generate in the future.</li>
-        </ul>
-        <ul class="fa-ul" style="list-style: none !important;">
-        <li><i class="fa-li fa fa-exclamation" style="color:red;"></i>Measurement of the stock of digital intangibles has proven particularly elusive.</li>
-        </ul>
+  <div class="slide-container-top">
+    <div class="grid-layout">
+        <!--- Box 1 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/social_network.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Soziale Netzwerke</div>
         </div>
-      </div>
+        <!--- Box 2 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/economic_network3.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Ökonomische Netzwerke</div>
+        </div>
+        <!--- Box 3 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/communication_network.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Kommunikationsnetzwerke</div>
+        </div>
+        <!--- Box 4 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/citation_network.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Zitationsnetzwerke</div>
+        </div>
+        <!--- Box 5 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/neurons.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Netzwerk von Neuronen</div>
+        </div>
+        <!--- Box 6 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/internet2.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Internet</div>
+        </div>
     </div>
-  <!--- Space Holder Box --->
-  <div class="slide-container-bottom"></div>
+  </div>
+  <div class="slide-container-bottom">
+  </div>
 </div>
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-#### How is new Digital Capital created? Open source software development has become an essential element of the digital knowledge strategy
+#### Viele Arten von Daten sind Graphen (3)
 
 <div class="slide-container">
-  <!--- Slide container (TOP) --->
-  <div class="slide-container-top vertical">
-    <!--- Content Box (1) equal height turned off--->
-    <div class="slide-box frame" style="flex:0 0 25%">
-      <!--- IMAGE --->
-      <div class="box-img" style="background-image: url(img/01_motivation/social_coding.png);">
-      </div>
-    </div>
-    <!--- Content Box (2) --->
-      <div class="slide-box frame">
-        <!--- TEXT --->
-        <div class="box-text">
-        <ul class="square-list">
-        <li>All new resources, including <b>Digital Capital / Knowledge</b>‚ are created through two generic processes: <b>Combination</b> and <b>Exchange</b>. <span class="reference">Schumpeter, (1934)</span></li>
-        <li>Developers who participate on multiple projects create ties (social capital) among projects and facilitate access to those projects’ resources. This enables the development of <b>digital capital</b> in the form of new or improved products or processes. <span class="reference">Nahapiet and Ghoshal, (1998)</span></li>
-        <li>Many firms (such as IBM, Microsoft, and Facebook) are actively engaging in open platforms to source new knowledge, identify innovations, and create new business value. <span class="reference">Santos et al., (2013)</span></li>
-        <li>The Open Source Services Market is predicted to grow at a CAGR of <span>&#126;</span>22% with a value expecting to reach <b>$67 billion</b> by 2026. <span class="reference">Statista, (2021)</span></li>
-        </ul>
+  <div class="slide-container-top">
+    <div class="grid-layout">
+        <!--- Box 1 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/knowledge_graph.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Wissensgraphen</div>
         </div>
-      </div>
+        <!--- Box 2 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/molecules.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Moleküle</div>
+        </div>
+        <!--- Box 3 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/code_graph.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Code Graphen</div>
+        </div>
+        <!--- Box 4 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/dolphin_triangle_mesh.svg); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">3D Shapes</div>
+        </div>
+        <!--- Box 5 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/scene_graph2.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Scene graphs</div>
+        </div>
+        <!--- Box 6 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/regulatory_network2.png); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Gen regulatory network</div>
+        </div>
+    </div>
   </div>
-  <!--- Space Holder Box --->
-  <div class="slide-container-bottom"></div>
+  <div class="slide-container-bottom">
+  </div>
 </div>
 
 
 ----
+
+<!-- .slide: class="align-top" -->
+
+#### WebP Test
+
+<div class="slide-container">
+  <div class="slide-container-top">
+    <div class="grid-layout">
+        <!--- Box 1 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Wissensgraphen</div>
+        </div>
+        <!--- Box 2 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Moleküle</div>
+        </div>
+        <!--- Box 3 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Code Graphen</div>
+        </div>
+        <!--- Box 4 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Zitationsnetzwerke</div>
+        </div>
+        <!--- Box 5 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Scene graphs</div>
+        </div>
+        <!--- Box 6 --->
+        <div class="slide-box frame">
+          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
+          <div style="display:flex; align-items:center; justify-content: center;">Gen regulatory network</div>
+        </div>
+    </div>
+  </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Modern ML Toolbox
+
+<style>
+.grid-containerDNN {
+  width:100%;
+  height:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr auto;
+  gap: 15px 15px;
+  grid-template-areas:
+    "P1 P2 P3 P4"
+    "DNN DNN DNN DNN"
+    "subtext subtext subtext subtext";
+}
+
+.P1 { grid-area: P1; }
+.P2 { grid-area: P2; }
+.P3 { grid-area: P3; }
+.P4 { grid-area: P4; }
+.DNN { grid-area: DNN; }
+.subtext { grid-area: subtext; }
+
+</style>
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="grid-containerDNN">
+            <div class="P1">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/01.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Christoph</div>
+            </div>
+            <div class="P2">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/02.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Patterns of local contrast</div>
+            </div>
+            <div class="P3">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/03.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Face features</div>
+            </div>
+            <div class="P4">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/04.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Face</div>
+            </div>
+            <div class="DNN box-img" style="background-image: url(img/02_dl/02_svg/dnn_sphere.svg);"></div>
+            <div class="subtext" style="text-align:center;">Modern deep learning toolbox is designed for simple sequences & grids</div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Modern ML Toolbox
+
+<style>
+.grid-containerDNN {
+  width:100%;
+  height:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr auto;
+  gap: 15px 15px;
+  grid-template-areas:
+    "P1 P2 P3 P4"
+    "DNN DNN DNN DNN"
+    "subtext subtext subtext subtext";
+}
+
+.P1 { grid-area: P1; }
+.P2 { grid-area: P2; }
+.P3 { grid-area: P3; }
+.P4 { grid-area: P4; }
+.DNN { grid-area: DNN; }
+.subtext { grid-area: subtext; }
+
+</style>
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="grid-containerDNN">
+            <div class="P1">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/01.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Christoph</div>
+            </div>
+            <div class="P2">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/02.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Patterns of local contrast</div>
+            </div>
+            <div class="P3">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/03.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Face features</div>
+            </div>
+            <div class="P4">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/04.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Face</div>
+            </div>
+            <div class="DNN box-img" style="background-image: url(img/02_dl/02_svg/dnn.svg);"></div>
+            <div class="subtext" style="text-align:center;">Modern deep learning toolbox is designed for simple sequences & grids</div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----  ----
+
+<!-- .slide: class="align-top" -->
+
+#### TESTTEST
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <!--- IFrAME --->
+          <iframe src="coediting_network.html" width="100%" height="100%">asd</iframe>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----  ----
 
 <!-- .slide: class="align-top" -->
 
