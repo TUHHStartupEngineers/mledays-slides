@@ -592,13 +592,28 @@ Image of complex structure
 
 <!-- .slide: class="align-top" -->
 
+#### Networks are complex
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/network_complex.svg);"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
 #### TESTTEST
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
         <div class="slide-container-top vertical">
           <!--- IFrAME --->
-          <iframe src="coediting_network.html" width="100%" height="100%">asd</iframe>
+          
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
         <div class="slide-container-bottom"></div>
