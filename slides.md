@@ -115,7 +115,7 @@
 
 <!-- .slide: class="align-center" -->
 
-# Motivation
+# Warum Graphen?
 
 ----
 
@@ -155,31 +155,37 @@
     <div class="grid-layout">
         <!--- Box 1 --->
         <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/event_graph.svg); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Event Graphs</div>
+            <span class="article-header-caption"><a href="https://neo4j.com/blog/the-first-graphgist-challenge-completed/">Image credit: neo4j</a></span>
+            <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/event_graph.svg); height:70%;"></div>
+            <div style="display:flex; align-items:center; justify-content: center;">Event Graphs</div>
         </div>
         <!--- Box 2 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://www.pngix.com/viewpng/hwoTx_networking-png-png-image-computer-network-transparent-png/">Image credit: pngix</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/computer_network.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Computer Netzwerke</div>
         </div>
         <!--- Box 3 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://comm.stanford.edu/mm/2016/07/polarization.jpg">Image credit: stanford</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/particle_network.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Partikel Netzwerke</div>
         </div>
         <!--- Box 4 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://images.nagwa.com/figures/586186734913/1.svg">Image credit: nagwa</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/food_web.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Nahrungsnetze</div>
         </div>
         <!--- Box 5 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="http://psb.stanford.edu/psb-online/proceedings/psb18/agrawal.pdf">Image credit: Monica Agrawal et al.</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/disease_pathway.png); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Übertragungswege (Krankheiten)</div>
+          <div style="display:flex; align-items:center; justify-content: center;">Übertragungswege</div>
         </div>
         <!--- Box 6 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://upload.wikimedia.org/wikipedia/commons/c/c5/Karte_der_S-Bahn_Hamburg.svg">Image credit: Wikipedia</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/sbahn_hh.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">U-Bahn Netzwerke</div>
         </div>
@@ -195,21 +201,52 @@
             
 #### Viele Arten von Daten sind Graphen (2)
 
+<style>
+.article-header-caption {
+    position: absolute;
+    font-size: .5em;
+    background: #000;
+    z-index: 5;
+    opacity: .4;
+    border-radius: 0 0 10px 0;
+    margin:-10px;
+}
+
+@media (min-width: 64em) {
+    .article-header-caption {
+        padding:5px 10px
+    }
+}
+
+.article-header-caption a {
+    color: #fff;
+    text-decoration:none
+}
+.slide-box2 {
+    flex: 1 0;
+    overflow: auto;
+    padding:0px;
+}
+</style>
+
 <div class="slide-container">
   <div class="slide-container-top">
     <div class="grid-layout">
         <!--- Box 1 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://all-free-download.com/free-vector/download/social-network-concept-human-icons-connected-in-circle_6826089.html">Image credit: all-free-download</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/social_network.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Soziale Netzwerke</div>
         </div>
         <!--- Box 2 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://science.sciencemag.org/content/325/5939/422">Image credit: science</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/economic_network3.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Ökonomische Netzwerke</div>
         </div>
         <!--- Box 3 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://courses.lumenlearning.com/wmopen-introbusiness/chapter/communication-channels-flows-networks/">Image credit: lumenlearning</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/communication_network.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Kommunikationsnetzwerke</div>
         </div>
@@ -220,11 +257,13 @@
         </div>
         <!--- Box 5 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="http://quote.ucsd.edu/sayginlab/files/2013/01/Neurons74.jpg">Image credit: UCSD</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/neurons.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Netzwerk von Neuronen</div>
         </div>
         <!--- Box 6 --->
         <div class="slide-box frame">
+        <span class="article-header-caption" style=""><a href="https://www.pngegg.com/en/png-bsete">Image credit: pngegg</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/internet2.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Internet</div>
         </div>
@@ -245,31 +284,37 @@
     <div class="grid-layout">
         <!--- Box 1 --->
         <div class="slide-box frame">
+        <span class="article-header-caption" style=""><a href="https://arxiv.org/abs/1503.00759">Image credit: Maximilian Nickel et al.</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/knowledge_graph.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Wissensgraphen</div>
         </div>
         <!--- Box 2 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://upload.wikimedia.org/wikipedia/commons/7/7c/LSD_Structure.svg">Image credit: Wikipedia</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/molecules.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Moleküle</div>
         </div>
         <!--- Box 3 --->
         <div class="slide-box frame">
+          <span class="article-header-caption" style=""><a href="https://www.researchgate.net/publication/220751974_Breadcrumbs_Efficient_Context_Sensitivity_for_Dynamic_Bug_Detection_Analyses">Image credit: Samuel Guyer et al.</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/code_graph.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Code Graphen</div>
         </div>
         <!--- Box 4 --->
         <div class="slide-box frame">
+        <span class="article-header-caption" style=""><a href="https://upload.wikimedia.org/wikipedia/commons/a/a0/Dolphin_triangle_mesh.svg">Image credit: Wikipedia</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/02_svg/dolphin_triangle_mesh.svg); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">3D Shapes</div>
         </div>
         <!--- Box 5 --->
         <div class="slide-box frame">
+        <span class="article-header-caption" style=""><a href="http://math.hws.edu/graphicsbook/c2/scene-graph.png">Image credit: math.hws.edu</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/scene_graph2.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Scene graphs</div>
         </div>
         <!--- Box 6 --->
         <div class="slide-box frame">
+        <span class="article-header-caption" style=""><a href="https://www.mdpi.com/2073-4425/11/7/771">Image credit: MDPI</a></span>
           <div class="box-img" style="margin:20px; background-image: url(img/01_motivation/03_png/regulatory_network2.png); height:70%;"></div>
           <div style="display:flex; align-items:center; justify-content: center;">Gen regulatory network</div>
         </div>
@@ -330,7 +375,91 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Modern ML Toolbox
+#### Unterschied Graphen und Netzwerke
+
+<style>
+/*GRID layout*/
+.grid-layout2 {
+  height:100%;
+  width:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*layout*/
+  grid-template-rows: 1.5fr 0.5fr;
+    grid-template-areas:
+    "T1 T2"
+    "B1 B1";
+  grid-gap: 10px;
+}
+
+.T1 { grid-area: T1; }
+.T2 { grid-area: T2; }
+.B1 { grid-area: B1; }
+</style>
+
+<div class="slide-container">
+  <div class="slide-container-top">
+    <div class="grid-layout2">
+      <div class="T1">
+        <!--- Top Box 1 --->
+        <div class="box-text" style="font-size:25px;">
+          <p style="font-size:40px"><b>Netzwerke</b></p>
+          <hr>
+          <p>Auch bekannt als <b>Natural Graph</b>:</p>
+          <ul class="square-list" style="margin-left:50px;">
+            <li>Social networks</li>
+            <li>Communication and transactions</li>
+            <li>Biomedicine</li>
+            <li>Brain connections</li>
+          </ul>
+        </div>
+      </div>
+      <div class="T2">
+        <!--- Top Box 2 --->
+        <div class="box-text" style="font-size:25px;">
+          <p style="font-size:40px"><b>Graphen</b></p>
+          <hr>
+          <p>as a representation:</p>
+          <ul class="square-list" style="margin-left:50px;">
+            <li>Information/knowledge</li>
+            <li>Software</li>
+            <li>Similarity networks</li>
+            <li>Relational structures</li>
+          </ul>
+        </div>
+      </div>
+      <!--- Bottom Box 3 --->
+      <div class="B1" style="text-align:center;">Sometimes the distinction between networks & graphs is blurred</div>
+    </div>
+  </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Theorie
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Graphs and relational data
+
+Something related to relational graphs  
+
+
+Complex domains have a rich relational structure, which can be represented as a relational graph
+By explicitly modeling relationships we achieve better performance!
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Modern ML Toolbox (spheres)
 
 <style>
 .grid-containerDNN {
@@ -387,7 +516,7 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Modern ML Toolbox
+#### Modern ML Toolbox (circles, more memory efficient)
 
 <style>
 .grid-containerDNN {
@@ -440,7 +569,26 @@
         <div class="slide-container-bottom"></div>
 </div>
 
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Networks are comlex
+
+Networks are comlex
+
+Image of complex structure
+
 ----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Workshop outline
+
+<span style="display: inline;"></span>
+
+
+----
 
 <!-- .slide: class="align-top" -->
 
