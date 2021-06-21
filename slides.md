@@ -12,7 +12,7 @@
     display:flex;
     flex-wrap: wrap; /*line break the boxes*/
     width:100%; 
-    height:78%;
+    height:90%;
 }
 /*Flex Direction of content boxes*/
 .horizontal { flex-direction:row; }
@@ -86,11 +86,11 @@
   
   <!-- .slide: data-state="no-toc-progress" --> <!-- don't show toc progress bar on this slide -->
 
-# MLE Days 2021
+# MLE-Days 2021
 <!-- .element: class="no-toc-progress" --> <!-- slide not in toc progress bar -->
 
 
-<h2 style="text-align: center;">Machine Learning with Graphs</h2>
+<h2 style="text-align: center;">Maschinelles Lernen mit Graphen</h2>
 
 <br> 
 
@@ -99,7 +99,7 @@
 <br> 
 
 
-2021-07-01 | MLE Days | TU Hamburg
+2021-07-01 | MLE-Days | TU Hamburg
 
 
 [![alt text](img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
@@ -115,7 +115,82 @@
 
 <!-- .slide: class="align-center" -->
 
-# Warum Graphen?
+# Geometric Deep Learning: Why Graphs?
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Ml is a function estimation problem
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/01_motivation/02_svg/ml_bb_vert.svg); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Multilayer perceptron can approximate a continuous function to any desired accuracy
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/01_motivation/02_svg/function.svg); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Curse of dimenions
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/complexity.svg); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Must learn shift invariance from data
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/dnn2.svg); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Any of the arrangements will do. No preferential order.
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/molecule.svg); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
 
 ----
 
@@ -329,43 +404,20 @@
 
 <!-- .slide: class="align-top" -->
 
-#### WebP Test
+#### Viele Arten von Daten sind Graphen (4)
 
 <div class="slide-container">
-  <div class="slide-container-top">
-    <div class="grid-layout">
-        <!--- Box 1 --->
-        <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Wissensgraphen</div>
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box frame">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/graph.webp); height: 90%;"></div>
+            <div style="text-align:center;">Continuous-time dynamic graph settings</div>
+          </div>
         </div>
-        <!--- Box 2 --->
-        <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Moleküle</div>
         </div>
-        <!--- Box 3 --->
-        <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Code Graphen</div>
-        </div>
-        <!--- Box 4 --->
-        <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Zitationsnetzwerke</div>
-        </div>
-        <!--- Box 5 --->
-        <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Scene graphs</div>
-        </div>
-        <!--- Box 6 --->
-        <div class="slide-box frame">
-          <div class="box-img" style="margin:20px; background-image: url(img/graph.webp); height:70%;"></div>
-          <div style="display:flex; align-items:center; justify-content: center;">Gen regulatory network</div>
-        </div>
-    </div>
-  </div>
   <div class="slide-container-bottom">
   </div>
 </div>
@@ -375,7 +427,7 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Unterschied Graphen und Netzwerke
+#### Es gibt im Wesentlichen zwei große Arten von Daten, die als Graphen dargestellt werden können
 
 <style>
 /*GRID layout*/
@@ -388,12 +440,14 @@
     grid-template-areas:
     "T1 T2"
     "B1 B1";
-  grid-gap: 10px;
+  grid-gap: 50px 10px;
 }
 
 .T1 { grid-area: T1; }
 .T2 { grid-area: T2; }
 .B1 { grid-area: B1; }
+
+li span { color: white; }
 </style>
 
 <div class="slide-container">
@@ -404,12 +458,28 @@
         <div class="box-text" style="font-size:25px;">
           <p style="font-size:40px"><b>Netzwerke</b></p>
           <hr>
-          <p>Auch bekannt als <b>Natural Graph</b>:</p>
+          <p>Auch bekannt als <b>Natural Graphs</b>:</p>
           <ul class="square-list" style="margin-left:50px;">
-            <li>Social networks</li>
-            <li>Communication and transactions</li>
-            <li>Biomedicine</li>
-            <li>Brain connections</li>
+            <li>Soziale Netzwerke
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Die <b>Gesellschaft</b> ist eine Ansammlung von 7+ Milliarden Individuen</span></li>
+              </ul>  
+            </li>
+            <li>Kommunikation und Transaktionen
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Elektronische Geräte, Telefonate, Finanztransaktionen</span></li>
+              </ul>  
+            </li>
+            <li>Biomedizin
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Wechselwirkungen zwischen <b>Genen/Proteinen</b> regulieren das Leben</span></li>
+              </ul>  
+            </li>
+            <li>Hirnverbindungen
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Unsere <b>Gedanken</b> sind in den Verbindungen zwischen Milliarden von Neuronen verborgen</span></li>
+              </ul>  
+            </li>
           </ul>
         </div>
       </div>
@@ -418,17 +488,25 @@
         <div class="box-text" style="font-size:25px;">
           <p style="font-size:40px"><b>Graphen</b></p>
           <hr>
-          <p>as a representation:</p>
+          <p>als Repräsentation:</p>
           <ul class="square-list" style="margin-left:50px;">
-            <li>Information/knowledge</li>
-            <li>Software</li>
-            <li>Similarity networks</li>
-            <li>Relational structures</li>
+            <li><b>Information / Wissen</b> werden organisiert und verknüpft</li>
+            <li><b>Software</b> kann als Graph dargestellt werden</li>
+            <li><b>Ähnlichkeitsnetzwerke</b>
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Ähnliche Datenpunkte verbinden</span></li>
+              </ul>  
+            </li>
+            <li>Relationale Strukturen
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Moleküle, Szenendiagramme, 3D-Formen, partikelbasierte Physiksimulationen</span></li>
+              </ul>  
+            </li>
           </ul>
         </div>
       </div>
       <!--- Bottom Box 3 --->
-      <div class="B1" style="text-align:center;">Sometimes the distinction between networks & graphs is blurred</div>
+      <div class="B1" style="text-align:center; font-size:40px;">⚡⚡ Manchmal ist die Unterscheidung zwischen Netzwerken und Graphen unscharf ⚡⚡</div>
     </div>
   </div>
   <div class="slide-container-bottom">
@@ -440,26 +518,15 @@
 
 <!-- .slide: class="align-center" -->
 
-# Theorie
+# Fragestellung
+
+## Wie können wir die Vorteile relationaler Strukturen für bessere Vorhersagen nutzen?
 
 ----
 
 <!-- .slide: class="align-top" -->
 
-#### Graphs and relational data
-
-Something related to relational graphs  
-
-
-Complex domains have a rich relational structure, which can be represented as a relational graph
-By explicitly modeling relationships we achieve better performance!
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Modern ML Toolbox (spheres)
+#### Aktuelle Situation: Moderne Deep-Learning-Techniken sind in der Regel für einfache Sequenzen & Grids ausgelegt
 
 <style>
 .grid-containerDNN {
@@ -484,62 +551,8 @@ By explicitly modeling relationships we achieve better performance!
 
 </style>
 
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top vertical">
-          <div class="grid-containerDNN">
-            <div class="P1">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/01.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Christoph</div>
-            </div>
-            <div class="P2">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/02.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Patterns of local contrast</div>
-            </div>
-            <div class="P3">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/03.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Face features</div>
-            </div>
-            <div class="P4">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/04.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Face</div>
-            </div>
-            <div class="DNN box-img" style="background-image: url(img/02_dl/02_svg/dnn_sphere.svg);"></div>
-            <div class="subtext" style="text-align:center;">Modern deep learning toolbox is designed for simple sequences & grids</div>
-          </div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Modern ML Toolbox (circles, more memory efficient)
-
-<style>
-.grid-containerDNN {
-  width:100%;
-  height:100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr auto;
-  gap: 15px 15px;
-  grid-template-areas:
-    "P1 P2 P3 P4"
-    "DNN DNN DNN DNN"
-    "subtext subtext subtext subtext";
-}
-
-.P1 { grid-area: P1; }
-.P2 { grid-area: P2; }
-.P3 { grid-area: P3; }
-.P4 { grid-area: P4; }
-.DNN { grid-area: DNN; }
-.subtext { grid-area: subtext; }
-
-</style>
+<br>
+<br>
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
@@ -551,18 +564,17 @@ By explicitly modeling relationships we achieve better performance!
             </div>
             <div class="P2">
               <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/02.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Patterns of local contrast</div>
+              <div style="display:flex; align-items:center; justify-content: center;">Muster lokaler Kontraste</div>
             </div>
             <div class="P3">
               <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/03.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Face features</div>
+              <div style="display:flex; align-items:center; justify-content: center;">Gesichtsmerkmale</div>
             </div>
             <div class="P4">
               <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/04.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Face</div>
+              <div style="display:flex; align-items:center; justify-content: center;">Gesicht</div>
             </div>
             <div class="DNN box-img" style="background-image: url(img/02_dl/02_svg/dnn.svg);"></div>
-            <div class="subtext" style="text-align:center;">Modern deep learning toolbox is designed for simple sequences & grids</div>
           </div>
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
@@ -573,17 +585,115 @@ By explicitly modeling relationships we achieve better performance!
 
 <!-- .slide: class="align-top" -->
 
-#### Networks are comlex
+#### Problem: Komplexe Domänen haben eine umfassende relationale Struktur, die als relationaler Graph dargestellt werden kann.
 
-Networks are comlex
 
-Image of complex structure
+<style>
+
+.container-network {
+  width:100%;
+  height:100%;
+  display: grid; 
+  grid-template-columns: 1fr 0.5fr 1fr; 
+  grid-template-rows: 2fr 1fr; 
+  gap: 60px 20px; 
+  grid-template-areas: 
+    "img1 img2 img3"
+    "img4 img4 img4";
+}
+.img1 { grid-area: img1; }
+.img2 { grid-area: img2; }
+.img3 { grid-area: img3; }
+.img4 { grid-area: img4; }
+
+.lastdot:before {
+   color: #2dc6d6;
+ }
+
+</style>
+
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="container-network">
+            <div class="img1 frame shadow">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/02_svg/network_complex.svg); height:85%;"></div>
+              <div class="subtext" style="text-align:center;"><b>Networks</b></div>
+            </div>
+            <div class="img2">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/02_svg/vs_arrow.svg); height:85%;"></div>
+            </div>
+            <div class="img3 frame shadow">
+              <div class="box-img" style="margin:20px 20px 0 20px; background-image: url(img/02_dl/02_svg/img_text.svg); height:85%;"></div>
+              <div class="subtext" style="text-align:center;"><b>Images & Text</b></div>
+            </div>
+            <div class="img4">
+              <ul class="square-list" style="margin-left:50px;">
+                <li><span>Beliebige Größe und komplexe topologische Struktur (d.h. keine räumliche Lokalitäten wie bei grids)</span></li>
+                <li><span>Keine feste Knotenreihenfolge oder Referenzpunkte</span></li>
+                <li><span>Oft dynamisch und mit multimodalen Merkmalen</span></li>
+              </ul>
+              <ul style="list-style-type: '➤ '; margin-left:50px;">
+                <li><span>Durch die explizite Modellierung von Beziehungen erreichen wir eine bessere Performance!</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Map nodes to d-dimensional embeddings such that similar nodes in the network are embedded close together
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/rep_learn_outline.svg); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
 
 ----  ----
 
 <!-- .slide: class="align-center" -->
 
-# Workshop outline
+# Workshop Übersicht
+
+###  Wie können wir neuronale Netze entwickeln, die viel breiter einsetzbar sind?
+
+<span style="display: inline;"></span>
+
+
+----
+
+
+<!-- .slide: class="align-top" -->
+
+#### Graphen sind die neue Forschungsgrenze des Deep Learning
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/gnn.svg);"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+
+----  ----
+
+<!-- .slide: class="align-center" -->
+
+# Beispiele
+
+###  Wie können wir neuronale Netze entwickeln, die viel breiter einsetzbar sind?
 
 <span style="display: inline;"></span>
 
@@ -592,12 +702,12 @@ Image of complex structure
 
 <!-- .slide: class="align-top" -->
 
-#### Networks are complex
+#### Example 1: Protein Folding - A protein chain acquires its native 3D structure
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
         <div class="slide-container-top vertical">
-          <div class="box-img" style="background-image: url(img/02_dl/02_svg/network_complex.svg);"></div>
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/deep_mind.svg); height: 90%;"></div>
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
         <div class="slide-container-bottom"></div>
@@ -607,53 +717,152 @@ Image of complex structure
 
 <!-- .slide: class="align-top" -->
 
-#### TESTTEST
+#### Example 1: The Protein Folding Problem - Computationally predict a protein's 3D structure based solely on its amino acid sequence
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
         <div class="slide-container-top vertical">
-          <!--- IFrAME --->
-          
+          <div class="box-img" style="background-image: url(img/protein.gif); height: 90%;"></div>
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
         <div class="slide-container-bottom"></div>
 </div>
 
-----  ----
+----
 
 <!-- .slide: class="align-top" -->
 
-#### Can Software Developer Boost Corporate Value? Accepted accounting principles often fail to capture the value of intangible capital
+#### Example 1: The Protein Folding Problem - Computationally predict a protein's 3D structure based solely on its amino acid sequence
 
 <div class="slide-container">
-  <!--- Slide container (TOP) --->
-  <div class="slide-container-top vertical">
-    <!--- Content Box (1) equal height turned off--->
-    <div class="slide-box" style="flex:0 0 20%">
-      and what about the entrepreneurial preferences of software talent driving these new technologies — can their tendencies be measured, as well?</div>
-    <!--- Content Box (2) --->
-    <div class="slide-box">
-      Research Scope – The reason to study this topic is to ...
-      <hr>
-      <ul class="square-list" style="margin-left:50px;">
-        <li><span>... measure intangible assets and digital capital (market value of knowledge / human capital)</span></li>
-        <li><span>... analyze the relationship between entrepreneurial activity and digital capital</span></li>
-        <li><span>... examine how new ventures make and earn returns to investments in technology / 	technological labour</span></li>
-      </ul>
-    </div>
-    <!--- Content Box (3) --->
-    <div class="slide-box">
-      Research question
-      <hr>
-      <ul class="square-list" style="margin-left:50px;">
-        <li>How do social, structural and reputational effects influence entrepreneurial entry and entrepreneurial succes?</li>
-        <li>What are the emerging trends in technological entrepreneurship?</li>
-        <li>How is the relationship between market value and aggregated measures of <b>digital capital?</b></li>
-      </ul>
-    </div>
-  </div>
-  <!--- Space Holder Box --->
-  <div class="slide-container-bottom"></div>
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/protein.webp); height: 90%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Example 1: The Protein Folding Problem - Computationally predict a protein's 3D structure based solely on its amino acid sequence
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/alphafold.svg); height: 100%;"></div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Example 3: Recommender system
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="slide-box" style="flex:0 0 30%">
+            <div class="box-text" style="font-size:25px;">
+              <ul>
+                <li>Users interacts with items</li>
+                  <ul style="list-style: square; color:#2dc6d6">
+                    <li><span>Watch movies, buy merchandise, listen to music</span></li>
+                    <li><span>Nodes: Users and items</span></li>
+                    <li><span>Edges: User-item interactions</span></li>
+                  </ul>
+                <li>Goal: Recommend items users might like</li>
+              </ul>  
+            </div>
+          </div>
+          <div class="slide-box" style="height: 10%;">
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/rec_sys.svg); height: 100%;"></div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Example 3: PinSage: Task: Recommend related pins to users
+
+<style>
+.containerPinSage {
+  height:100%;
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1.5fr 0.2fr 1.3fr; 
+  gap: 10px 10px; 
+  grid-template-areas: 
+    "u1 u1 u2"
+    "m1 m1 m1"
+    "botdo1 botdo1 botdo2";
+}
+.u1 { grid-area: u1; }
+.u2 { grid-area: u2; }
+.m1 { grid-area: m1; }
+.botdo1 { grid-area: botdo1; }
+.botdo2 { grid-area: botdo2; }
+
+
+</style>
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="containerPinSage">
+            <div class="u1">
+              <div class="box-img" style="background-image: url(img/02_dl/02_svg/pinsage1.svg); "></div>
+            </div>
+            <div class="u2">
+              <section>
+                <b style="color:#2dc6d6;">Task:</b> Learn node embeddings $z_{i}$ such that
+                \[\begin{aligned}
+                d(z_{bike1},z_{bike2}) < d(z_{bike1},z_{jacket})
+                \end{aligned} \]
+              </section>
+            </div>
+            <div class="m1">
+              <div class="box-text"><b>Predict whether two nodes in a graph are related</b></div>
+            </div>
+            <div class="botdo1">
+              <div class="box-img" style="background-image: url(img/02_dl/02_svg/pinsage2.svg); background-size:80%;"></div>
+            </div>
+            <div class="botdo2">
+              <div class="box-img" style="background-image: url(img/02_dl/02_svg/pinsage3.svg);"></div>
+            </div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Example 4: Drug Side Effect
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+        <div class="slide-box" style="flex:0 0 15%">
+        <p style="text-align:center;">Many patients take multiple drugs to treat complex or co-existing diseases. <br>Task: Given a pair of drugs predict adverse side effects!</p>
+        </div>
+          <div class="slide-box">
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/drug_union.svg); height: 100%;"></div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
 </div>
 
 ----  ----
