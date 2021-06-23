@@ -139,9 +139,13 @@
 #### Multilayer perceptron can approximate a continuous function to any desired accuracy
 
 <div class="slide-container">
-        <!--- Slide container (TOP) --->
         <div class="slide-container-top vertical">
-          <div class="box-img" style="background-image: url(img/01_motivation/02_svg/function.svg); height: 90%;"></div>
+        <div class="slide-box" style="flex:0 0 65%">
+          <div class="box-img" style="background-image: url(img/01_motivation/02_svg/function.svg);"></div>
+        </div>
+          <div class="slide-box">
+            <div class="box-text">Multilayer Perceptrons (Rosenblatt, 1958), the simplest feed- forward neural networks, are universal approximators: with just one hidden layer, they can represent combinations of step functions, allowing to approx- imate any continuous function with arbitrary precision.</div>
+          </div>
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
         <div class="slide-container-bottom"></div>
@@ -166,7 +170,7 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Must learn shift invariance from data
+<h4>A symmetry of an object or system is a transformation that leaves a certain property of said object or system unchanged or <b>invariant</b></h4>
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
@@ -181,39 +185,14 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Any of the arrangements will do. No preferential order.
+#### In computational chemistry, the task of predicting properties of molecules independently of their orientation in space requires rotational invariance
 
+
+Take a look at the equivarent matrix adjenceny part late
 <div class="slide-container">
         <!--- Slide container (TOP) --->
         <div class="slide-container-top vertical">
           <div class="box-img" style="background-image: url(img/02_dl/02_svg/molecule.svg); height: 90%;"></div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Warum Graphen?
-
-
-<p style="text-align:center">Graphen sind eine allgemeine Sprache zum Beschreiben und Analysieren von Entitäten mit Beziehungen/Interaktionen.</p>
-<br>
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top horizontal">
-          <!--- Content Box (1) --->
-          <div class="slide-box frame">
-            <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/01_motivation/02_svg/graph_entities.svg); background-size:80%;"></div>
-          </div>
-          <!--- Content Box (2) --->
-          <div class="slide-box frame">
-            <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/01_motivation/02_svg/graph_entities_connected.svg); background-size:80%;"></div>
-          </div>
         </div>
         <!--- Slide container (BOTTOM / SPACING) --->
         <div class="slide-container-bottom"></div>
@@ -422,6 +401,110 @@
   </div>
 </div>
 
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### geometric prior (explain equivarence & invariance)
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/signals.svg); height: 90%;"></div>
+          </div>
+        </div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### invariance/equivarence (shift) + scale separation (coarse graining) + Aufbau von layern und pooling
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/...); height: 90%;"></div>
+          </div>
+        </div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Graph, Node features, Edge features
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+        <div class="slide-box" style="flex:0 0 15%">
+        <p>Aim: Map nodes/graphs into an embedding space, in which they can be distinguished for a given task<p>
+        <p>Graph, Node features, edge features --> similar to Node2Vec & Graph Kernels. A Graph Neural Network updates node
+ representations by repeatedly transforming and aggregating neighboring node representations<p>
+        </div>
+          <!--- Content Box (1) --->
+          <div class="slide-box">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/rep_learn_outline.svg); height: 90%;"></div>
+          </div>
+        </div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Message Passing Scheme
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="box-img" style="background-image: url(img/02_dl/02_svg/dataflow.svg); height: 90%;"></div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Node classifactions, ...
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          Nodes classification<br>
+          Graph classifaction<br>
+          Link Prediction<br>
+          Inductive Learning<br>
+          Transductive Learning<br>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
 
 ----
 
@@ -1262,3 +1345,32 @@ li span { color: white; }
 
 [![alt text](../img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
 
+
+### BACKUP
+
+<!-- .slide: class="align-top" -->
+
+#### Warum Graphen?
+
+
+<p style="text-align:center">Graphen sind eine allgemeine Sprache zum Beschreiben und Analysieren von Entitäten mit Beziehungen/Interaktionen.</p>
+<br>
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box frame">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/01_motivation/02_svg/graph_entities.svg); background-size:80%;"></div>
+          </div>
+          <!--- Content Box (2) --->
+          <div class="slide-box frame">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/01_motivation/02_svg/graph_entities_connected.svg); background-size:80%;"></div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
