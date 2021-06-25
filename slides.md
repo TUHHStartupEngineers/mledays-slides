@@ -121,7 +121,11 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Ml is a function estimation problem
+#### ML is a function estimation problem
+
+*If we look at ML at least in its simplest setting it's essentially a function estimation problem. We are given the outputs of some unknown function on a training set let's say labelled images of us and try to find a function from some hypothesis class that fits well the training data and allows to predict the outputs on previously unseen inputs.*
+
+*Neural networks appear to be a suitable choice to represent functions beceause even with the simplest construction like the perceptron shown here we can produce a dense class of funtions using just two layers...*
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
@@ -137,6 +141,8 @@
 <!-- .slide: class="align-top" -->
 
 #### Multilayer perceptron can approximate a continuous function to any desired accuracy
+
+*...which allows us to approximate any continuous function to any desired accuracy. We call this property Universal Approximation. The setting of this problem in low dimensions is a classical problem in approximation theory that has been studied to death in the past centuary...*
 
 <div class="slide-container">
         <div class="slide-container-top vertical">
@@ -155,7 +161,9 @@
 
 <!-- .slide: class="align-top" -->
 
-#### Curse of dimenions
+#### Curse of dimensionality
+
+*...we have a very precise mathematical control of the estimation errors. But the situation is entirely differnet in high dimensions... The number of samples grows very fast with the dimensions... So we get a phenomenon colloquially known as the curse of dimensionality.... makes learnign impossible*
 
 <div class="slide-container">
         <!--- Slide container (TOP) --->
@@ -172,6 +180,8 @@
 
 <h4>A symmetry of an object or system is a transformation that leaves a certain property of said object or system unchanged or <b>invariant</b></h4>
 
+*This is perhaps best seen in computer vision problems like image classifaction. Even tiny images tend to be very high dimensional but intuitive they have a lot of structure that is broken and thrown away then we parse the image into a vector to feed it into the simple perceptron neural network. If the image is now shifted by just one pixel, the vectorized input will be very different and the neural network will need to be shown a lot of examples in order to learn that shifted inputs must be classified in the same way.*
+
 <div class="slide-container">
         <!--- Slide container (TOP) --->
         <div class="slide-container-top vertical">
@@ -187,6 +197,7 @@
 
 #### In computational chemistry, the task of predicting properties of molecules independently of their orientation in space requires rotational invariance
 
+*Another example: Molexule of caffeine represented as a graph. Nodes = atoms, edges = chemical bonds. If we were to apply a neural network to this input for example to predict some chemical property like its binding energy to some receptor we could parse it again a vector. but this time you see that any arrangement of the node features will do, because in graphs (unlike images) we don't have a preferential way of ordering the nodes. Molecules appear to be just one example of data with irregular npn-euclidian struture on which we would like to apply deep learning techniques...*
 
 Take a look at the equivarent matrix adjenceny part late
 <div class="slide-container">
@@ -203,6 +214,8 @@ Take a look at the equivarent matrix adjenceny part late
 <!-- .slide: class="align-top" -->
 
 #### Viele Arten von Daten sind Graphen (1)
+
+*...further examples are...*
 
 <div class="slide-container">
   <div class="slide-container-top">
@@ -406,7 +419,9 @@ Take a look at the equivarent matrix adjenceny part late
 
 <!-- .slide: class="align-top" -->
 
-#### geometric prior (explain equivarence & invariance)
+#### Geometric prior (explain equivarence & invariance)
+
+*...let's look again at the multi-dimensional image classification, that at the first glance seemed hopeless because of the curse of dimensionality. Fortunately we have additional structure that comes from the geometry of the input signal. We call this structure a geometric prior and it's a general powerful principle that gives us optimism and hope in dimensionality cursed problems. In our example of image classification, the input image is not just a d-dimensional vector. It's a signal defined on some domain which in this case is a two-dimensional grid. The structure of the domain is captured by a symmetry group. The group of 2d translations in our examaple, which acts on the points on the domain. In the space of signals, the group actions on the underlying domain are manifested through what is called the group representation. In our case it's simply the shift operator, a d x d matrix that acts on the d-dimensional vector...*
 
 <div class="slide-container">
         <div class="slide-container">
@@ -429,6 +444,14 @@ Take a look at the equivarent matrix adjenceny part late
 
 #### invariance/equivarence (shift) + scale separation (coarse graining) + Aufbau von layern und pooling
 
+*...invariant functions. No matter where Christoph is located in the image, we still want to say it's Christoph --> Example of shift invariance*<br>
+
+*...explain shift equivarence..*
+
+*...scale separation? (coarse graining)*
+
+*...Example image: Sequence of equivarent layers, then an invariant global pooling layer aggregating everything into a single output. Optional coarsening procedure that takes the form of local pooling in neural network implementations.*
+
 <div class="slide-container">
         <div class="slide-container">
         <!--- Slide container (TOP) --->
@@ -448,7 +471,84 @@ Take a look at the equivarent matrix adjenceny part late
 
 <!-- .slide: class="align-top" -->
 
+#### Graph (arbitrary ordering of nodes)
+
+*which can be ordered --> call the grap directed*<br>
+*nodes can have some features attached to them, modeled as d-dimensional vectors(age, genderm, ...)*<br>
+*A key structural characteristic of a graph is that we don't have a canocical way to order its nodes. So if we arrange the node feature vectors into a matrix, we automatically prescribe some arbitrary ordering of the nodes. The same holds for the adjacency matrix that represents the structure of the graph. If we number the nodes differently, the rows of the feature matrix and the corresponding rows and columns of the adjacency matrix will be permuted by some permutation matrix P. P is a representation of the permutation group and we have n! such elements*<br>
+*
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/graph.svg); height: 90%;"></div>
+          </div>
+        </div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Permutation
+
+*If we want to implement a function on the graph that provides a single output for the whole graph like predicting energy in our molecule graph example, we need to make sure that its output is unaffected by the ordering of the input nodes. We call such f permutation invariant. If on the other hand we want to make node wise predictions, for example to detect malicious users in a social network, we want a function that changes in the same way as the input with the reordering of the nodes or in other words is permutation equivariant.*<br>
+
+A way of constructing a pretty broad class of traceable functions on graphs is using the local neighborhood of a node. We look at the nodes that are connected by an edge to a node i and aggregate their feature vectors together with the vector of the node itself (?). Because we don't have a canocial ordering of the neighbors this must be done in a permutation invariant way. So this local aggregation function that we denote by UPDATE... 
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/permutation_inv_equ.svg); height: 90%;"></div>
+          </div>
+        </div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Formulas
+
+*...*
+
+<div class="slide-container">
+        <div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top horizontal">
+          <!--- Content Box (1) --->
+          <div class="slide-box">
+            <!--- IMAGE --->
+            <div class="box-img" style="background-image: url(img/02_dl/02_svg/formulas.svg); height: 90%;"></div>
+          </div>
+        </div>
+        </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
 #### Graph, Node features, Edge features
+
+*image of graph with nodes, edges, notation, ...*
+Map nodes to d-dimensional embeddings such that similar nodes in the network are embedded close together
 
 <div class="slide-container">
         <div class="slide-container">
@@ -505,253 +605,6 @@ Take a look at the equivarent matrix adjenceny part late
   <div class="slide-container-bottom">
   </div>
 </div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Es gibt im Wesentlichen zwei große Arten von Daten, die als Graphen dargestellt werden können
-
-<style>
-/*GRID layout*/
-.grid-layout2 {
-  height:100%;
-  width:100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /*layout*/
-  grid-template-rows: 1.5fr 0.5fr;
-    grid-template-areas:
-    "T1 T2"
-    "B1 B1";
-  grid-gap: 50px 10px;
-}
-
-.T1 { grid-area: T1; }
-.T2 { grid-area: T2; }
-.B1 { grid-area: B1; }
-
-li span { color: white; }
-</style>
-
-<div class="slide-container">
-  <div class="slide-container-top">
-    <div class="grid-layout2">
-      <div class="T1">
-        <!--- Top Box 1 --->
-        <div class="box-text" style="font-size:25px;">
-          <p style="font-size:40px"><b>Netzwerke</b></p>
-          <hr>
-          <p>Auch bekannt als <b>Natural Graphs</b>:</p>
-          <ul class="square-list" style="margin-left:50px;">
-            <li>Soziale Netzwerke
-              <ul style="color: #2dc6d6; margin-left:50px;">
-                <li><span>Die <b>Gesellschaft</b> ist eine Ansammlung von 7+ Milliarden Individuen</span></li>
-              </ul>  
-            </li>
-            <li>Kommunikation und Transaktionen
-              <ul style="color: #2dc6d6; margin-left:50px;">
-                <li><span>Elektronische Geräte, Telefonate, Finanztransaktionen</span></li>
-              </ul>  
-            </li>
-            <li>Biomedizin
-              <ul style="color: #2dc6d6; margin-left:50px;">
-                <li><span>Wechselwirkungen zwischen <b>Genen/Proteinen</b> regulieren das Leben</span></li>
-              </ul>  
-            </li>
-            <li>Hirnverbindungen
-              <ul style="color: #2dc6d6; margin-left:50px;">
-                <li><span>Unsere <b>Gedanken</b> sind in den Verbindungen zwischen Milliarden von Neuronen verborgen</span></li>
-              </ul>  
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="T2">
-        <!--- Top Box 2 --->
-        <div class="box-text" style="font-size:25px;">
-          <p style="font-size:40px"><b>Graphen</b></p>
-          <hr>
-          <p>als Repräsentation:</p>
-          <ul class="square-list" style="margin-left:50px;">
-            <li><b>Information / Wissen</b> werden organisiert und verknüpft</li>
-            <li><b>Software</b> kann als Graph dargestellt werden</li>
-            <li><b>Ähnlichkeitsnetzwerke</b>
-              <ul style="color: #2dc6d6; margin-left:50px;">
-                <li><span>Ähnliche Datenpunkte verbinden</span></li>
-              </ul>  
-            </li>
-            <li>Relationale Strukturen
-              <ul style="color: #2dc6d6; margin-left:50px;">
-                <li><span>Moleküle, Szenendiagramme, 3D-Formen, partikelbasierte Physiksimulationen</span></li>
-              </ul>  
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!--- Bottom Box 3 --->
-      <div class="B1" style="text-align:center; font-size:40px;">⚡⚡ Manchmal ist die Unterscheidung zwischen Netzwerken und Graphen unscharf ⚡⚡</div>
-    </div>
-  </div>
-  <div class="slide-container-bottom">
-  </div>
-</div>
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Fragestellung
-
-## Wie können wir die Vorteile relationaler Strukturen für bessere Vorhersagen nutzen?
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Aktuelle Situation: Moderne Deep-Learning-Techniken sind in der Regel für einfache Sequenzen & Grids ausgelegt
-
-<style>
-.grid-containerDNN {
-  width:100%;
-  height:100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 0.5fr 1fr auto;
-  gap: 15px 15px;
-  grid-template-areas:
-    "P1 P2 P3 P4"
-    "DNN DNN DNN DNN"
-    "subtext subtext subtext subtext";
-}
-
-.P1 { grid-area: P1; }
-.P2 { grid-area: P2; }
-.P3 { grid-area: P3; }
-.P4 { grid-area: P4; }
-.DNN { grid-area: DNN; }
-.subtext { grid-area: subtext; }
-
-</style>
-
-<br>
-<br>
-
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top vertical">
-          <div class="grid-containerDNN">
-            <div class="P1">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/01.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Christoph</div>
-            </div>
-            <div class="P2">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/02.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Muster lokaler Kontraste</div>
-            </div>
-            <div class="P3">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/03.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Gesichtsmerkmale</div>
-            </div>
-            <div class="P4">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/04.png); height:70%;"></div>
-              <div style="display:flex; align-items:center; justify-content: center;">Gesicht</div>
-            </div>
-            <div class="DNN box-img" style="background-image: url(img/02_dl/02_svg/dnn.svg);"></div>
-          </div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Problem: Komplexe Domänen haben eine umfassende relationale Struktur, die als relationaler Graph dargestellt werden kann.
-
-
-<style>
-
-.container-network {
-  width:100%;
-  height:100%;
-  display: grid; 
-  grid-template-columns: 1fr 0.5fr 1fr; 
-  grid-template-rows: 2fr 1fr; 
-  gap: 60px 20px; 
-  grid-template-areas: 
-    "img1 img2 img3"
-    "img4 img4 img4";
-}
-.img1 { grid-area: img1; }
-.img2 { grid-area: img2; }
-.img3 { grid-area: img3; }
-.img4 { grid-area: img4; }
-
-.lastdot:before {
-   color: #2dc6d6;
- }
-
-</style>
-
-
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top vertical">
-          <div class="container-network">
-            <div class="img1 frame shadow">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/02_svg/network_complex.svg); height:85%;"></div>
-              <div class="subtext" style="text-align:center;"><b>Networks</b></div>
-            </div>
-            <div class="img2">
-              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/02_svg/vs_arrow.svg); height:85%;"></div>
-            </div>
-            <div class="img3 frame shadow">
-              <div class="box-img" style="margin:20px 20px 0 20px; background-image: url(img/02_dl/02_svg/img_text.svg); height:85%;"></div>
-              <div class="subtext" style="text-align:center;"><b>Images & Text</b></div>
-            </div>
-            <div class="img4">
-              <ul class="square-list" style="margin-left:50px;">
-                <li><span>Beliebige Größe und komplexe topologische Struktur (d.h. keine räumliche Lokalitäten wie bei grids)</span></li>
-                <li><span>Keine feste Knotenreihenfolge oder Referenzpunkte</span></li>
-                <li><span>Oft dynamisch und mit multimodalen Merkmalen</span></li>
-              </ul>
-              <ul style="list-style-type: '➤ '; margin-left:50px;">
-                <li><span>Durch die explizite Modellierung von Beziehungen erreichen wir eine bessere Performance!</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-#### Map nodes to d-dimensional embeddings such that similar nodes in the network are embedded close together
-
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top vertical">
-          <div class="box-img" style="background-image: url(img/02_dl/02_svg/rep_learn_outline.svg); height: 90%;"></div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Workshop Übersicht
-
-###  Wie können wir neuronale Netze entwickeln, die viel breiter einsetzbar sind?
-
-<span style="display: inline;"></span>
-
 
 ----
 
@@ -952,366 +805,6 @@ li span { color: white; }
 
 <!-- .slide: class="align-center" -->
 
-# Theory / Methods
-
-<span style="display: inline;"></span>
-
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class='h-wrap'>
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Network Theory</h2><h2 style="font-size:1.563em"> distinguishes four types of mechanisms which relate network structures to consequences 
-
-</h2>
-</div>
-
-<div class="slide-container">
-  <div class="slide-container-top vertical">
-  <div class="slide-box" style="flex:0 0 10%">Social Capital Theory is applicable to OSS development because OSS is an intellectual resource developed via the social action of freelance developers.</div>
-  <div class="slide-box" style="background-image: url(img/02_theory/network.svg);
-                                          background-size:60%;
-                                          background-repeat: no-repeat;
-                                          background-position: center, center;"></div>
-  </div>
-  <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class='h-wrap'>
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Model</h2><h2 style="font-size:1.563em">: Research Tradition and operationalization of the underlying mechanism (cohesion, equivalence, ...) are yet to be defined</h2>
-</div>
-
-<div class="slide-container">
-  <div class="slide-container-top" style="background-image: url(img/02_theory/model.svg);
-                                          background-repeat: no-repeat;
-                                          background-position: center, center;
-                                          background-size:60%;"></div>
-  <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class='h-wrap'>
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Project 1</h2><h2 style="font-size:1.563em">: Network Measures - Projects have various kinds of developers characterized by different types of development activities</h2>
-</div>
-
-<div class="slide-container">
-  <div class="slide-container-top">
-    <div class="grid-layout">
-        <!--- Box 1 --->
-        <div class="box-text" style="font-size:25px;">
-          <p style="font-size:40px"><b>Reputation</b></p>
-          <hr>
-          <p>The expertise / performance of a developer depends on several factors:</p>
-          <ul class="square-list" style="margin-left:50px;">
-            <li>Quality</li>
-            <li>Continuity</li>
-            <li>Quantity</li>
-          </ul>
-        </div>
-        <!--- Box 2 --->
-        <div class="box-text" style="font-size:25px;">
-          <p style="font-size:40px"><b>Status</b></p>
-          <hr>
-          <p>The activity of users forms several kinds of social networks:</p>
-          <ul class="square-list" style="margin-left:50px;">
-            <li>Network of collaboration</li>
-            <li>Network of followers</li>
-            <li>Network of watchers / stars</li>
-          </ul>
-        </div>
-        <!--- Box 3 --->
-        <div class="slide-box" style="margin:0 50px 0 50px;">
-          <div class="box-img frame shadow" style="background-image: url(img/02_theory/commit.png);"></div>
-        </div>
-        <!--- Box 4 --->
-        <div class="slide-box" style="margin:0 50px 0 50px;">
-          <div class="box-img frame shadow" style="background-image: url(img/02_theory/graph.webp);"></div>
-        </div>
-    </div>
-  </div>
-  <div class="slide-container-bottom">
-  </div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class="h-wrap">
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Project 2</h2><h2 style="font-size:1.563em">: Equivalence Measures - Detecting technological topics across GitHub two compare entrepreneurs with similar specialization</h2>
-</div>
-
-<style>
-.grid-container {
-  width:100%;
-  height:100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto 1fr auto 1fr;
-  gap: 10px 10px;
-  grid-template-areas:
-    "Left Top-Row Top-Row Top-Row Right"
-    "Left Top-1 Top-2 Top-3 Right"
-    "Left Bottom-Row Bottom-Row Bottom-Row Right"
-    "Left Bottom-1 Bottom-2 Bottom-3 Right";
-}
-
-.Left { grid-area: Left; }
-.Top-Row { grid-area: Top-Row; }
-.Bottom-Row { grid-area: Bottom-Row; }
-.Right { grid-area: Right; }
-.Top-1 { grid-area: Top-1; }
-.Top-2 { grid-area: Top-2; }
-.Top-3 { grid-area: Top-3; }
-.Bottom-1 { grid-area: Bottom-1; }
-.Bottom-2 { grid-area: Bottom-2; }
-.Bottom-3 { grid-area: Bottom-3; }
-
-.Bottom { 
-  display: grid;
-  place-items: center;
-  text-align:center;
-}
-
-</style>
-
-<div class="slide-container">
-  <div class="slide-container-top">
-    <div class="grid-container">
-      <div class="Left frame">
-        <div class="slide-container-top vertical" style="height:100%;">
-          <div class="slide-box" style="padding:20px;">
-            <div class="box-img" style="background-image: url(img/02_theory/readme.png);">
-            </div>
-          </div>
-          <p style="text-align:center; margin-bottom:30px"><b>Input:</b><br>Annotated README</p>
-        </div>
-      </div>
-      <div class="Top-Row frame" style="justify-content: center; align-items: center;">
-        <div class="slide-box" style="display: grid; place-items: center;background: rgba(255, 255, 255, 0.05);">
-          Method 1: Machine Learning
-        </div>
-      </div>
-      <div class="Right frame">
-        <div class="slide-container-top vertical" style="height:100%;">
-          <div class="slide-box" style="padding:30px;">
-            <div class="box-img" style="background-image: url(img/02_theory/cluster.svg);">
-            </div>
-          </div>
-          <p style="text-align:center; margin-bottom:30px"><b>Output:</b><br>Clustered Topics</p>
-        </div>
-      </div>
-      <div class="Top-1 frame">
-        <div class="slide-container-top vertical" style="height:100%">
-          <div class="slide-box" style="padding-top:20px;">
-            <div class="box-img" style="background-image: url(img/02_theory/heuristic.svg);">
-            </div>
-          </div>
-          <p style="text-align:center; font-size:0.7em; color:#98A6AD"><em>Heuristic</em></p>
-          <div class="slide-box">
-            <div class="box-img" style="padding-top:10px;background-image: url(img/02_theory/stat_feat.svg);">
-            </div>
-          </div>
-          <p style="text-align:center; font-size:0.7em; color:#98A6AD"><em>Statistical</em></p>
-          <p style="text-align:center; margin-bottom:30px">Feature Extraction</p>
-        </div>
-      </div>
-      <div class="Top-2 frame">
-        <div class="slide-container-top vertical" style="height:100%;">
-          <div class="slide-box" style="padding:30px;">
-            <div class="box-img" style="background-image: url(img/02_theory/brain.svg);"></div>
-          </div>
-          <p style="text-align:center; margin-bottom:30px">Classifier Learning</p>
-        </div>
-      </div>
-      <div class="Top-3 frame">
-        <div class="slide-container-top vertical" style="height:100%">
-          <div class="slide-box" style="padding-top:35px;">
-            <div class="box-img" style="background-image: url(img/02_theory/validation.svg);">
-            </div>
-          </div>
-          <p style="text-align:center; margin-bottom:30px">Validation</p>
-        </div>
-      </div>
-      <div class="Bottom-Row frame" style="justify-content: center; align-items: center;">
-        <div class="slide-box" style="display: grid; place-items: center;background: rgba(255, 255, 255, 0.05);">
-          Method 2: Topic Modeling
-        </div>
-      </div>
-      <div class="Bottom Bottom-1 frame">
-        <div class="slide-container-top vertical" style="height:100%;">
-          <div class="slide-box" style="padding:30px;">
-            <div class="box-img" style="background-image: url(img/02_theory/data_extract.svg);"></div>
-          </div>
-          <p style="text-align:center; margin-bottom:30px">Data Extraction</p>
-        </div>
-      </div>
-      <div class="Bottom Bottom-2 frame">
-        <div class="slide-container-top vertical" style="height:100%;">
-          <div class="slide-box" style="padding:30px;">
-            <div class="box-img">Bag-of-Words<br>Word Embedding<br>LDA</div>
-          </div>
-          <p style="text-align:center; margin-bottom:30px">Text Classification</p>
-        </div>
-      </div>
-      <div class="Bottom Bottom-3 frame"></div>
-    </div>
-  <div class="slide-container-bottom">
-  </div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class='h-wrap'>
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Project 3</h2><h2 style="font-size:1.563em">: Identity Matching - Linking Developer with startup data</h2>
-</div>
-
-<div class="slide-container">
-  <div class="slide-container-top" style="background-image: url(img/02_theory/data_sources.svg);
-                                          background-repeat: no-repeat;
-                                          background-position: center, center;
-                                          background-size:60%;"></div>
-  <div class="slide-container-bottom"></div>
-</div>
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Data
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class="h-wrap">
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Angellist (total)</h2><h2 style="font-size:1.563em">: >10 million profiles and >5 million organizations</h2>
-</div>
-
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top horizontal">
-          <!--- Content Box (1) --->
-          <div class="slide-box frame">
-            <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/03_data/al_employees_hist.png); height: 90%;"></div>
-            <div style="text-align:center;">Profiles</div>
-          </div>
-          <!--- Content Box (2) --->
-          <div class="slide-box frame">
-            <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/03_data/al_markets.png); height: 90%;"></div>
-            <div style="text-align:center;">Startups</div>
-          </div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----
-
-<!-- .slide: class="align-top" -->
-
-<div class="h-wrap">
-  <h2 id="paper-2-technological-fields" style="font-size:1.563em">Angellist (github)</h2><h2 style="font-size:1.563em">: hard links to github and stackoverflow</h2>
-</div>
-
-<div class="slide-container">
-        <!--- Slide container (TOP) --->
-        <div class="slide-container-top horizontal">
-          <!--- Content Box (1) --->
-          <div class="slide-box frame">
-            <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/03_data/....png); height: 90%;"></div>
-            <div style="text-align:center;">Profiles</div>
-          </div>
-          <!--- Content Box (2) --->
-          <div class="slide-box frame">
-            <!--- IMAGE --->
-            <div class="box-img" style="background-image: url(img/03_data/....png); height: 90%;"></div>
-            <div style="text-align:center;">Startups</div>
-          </div>
-        </div>
-        <!--- Slide container (BOTTOM / SPACING) --->
-        <div class="slide-container-bottom"></div>
-</div>
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
-# Conclusion
-
-----
-
-<!-- .slide: class="align-top" -->
-
-## Conclusion
-
-<div class="row-top">
-
-
-<div class="column">
-
-#### Contributions
-
-* __Theoretical__:
-
-  * Organizational design and microfoundations of autonomy
-
-  * Autonomy and entrepreneurial (over-) confidence
-
-<br>
-
-
-* __Practical__:
-
-  * Professionalization of (corporate) entrepreneurship
-
-  * Understand the design and limits of current practices
-
-
-
-</div>
-
-
-<div class="column">
-
-#### Limitations & outlook
-
-
-* Field experiment with real organization
-  * Managerial assignment
-  * Realistic degrees of freedom in choice
-    * More or less contraint depending on organizational context (goals, structure) 
-
-
-<br>
-
-* Mechanism studies in more controlled environments
-
-
-
-</div>
-
-</div>
-
-
-
-----  ----
-
-<!-- .slide: class="align-center" -->
-
 <!-- .slide: data-state="no-toc-progress" --> <!-- don't show toc progress bar on this slide -->
 
 
@@ -1345,8 +838,230 @@ li span { color: white; }
 
 [![alt text](../img/logo.png)](https://www.startupengineer.io) <!-- .element: class="logo" -->
 
+----  ----
 
-### BACKUP
+<!-- .slide: class="align-center" -->
+
+# NOT used
+
+### backup
+
+<span style="display: inline;"></span>
+
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Aktuelle Situation: Moderne Deep-Learning-Techniken sind in der Regel für einfache Sequenzen & Grids ausgelegt
+
+<style>
+.grid-containerDNN {
+  width:100%;
+  height:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.5fr 1fr auto;
+  gap: 15px 15px;
+  grid-template-areas:
+    "P1 P2 P3 P4"
+    "DNN DNN DNN DNN"
+    "subtext subtext subtext subtext";
+}
+
+.P1 { grid-area: P1; }
+.P2 { grid-area: P2; }
+.P3 { grid-area: P3; }
+.P4 { grid-area: P4; }
+.DNN { grid-area: DNN; }
+.subtext { grid-area: subtext; }
+
+</style>
+
+<br>
+<br>
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="grid-containerDNN">
+            <div class="P1">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/01.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Christoph</div>
+            </div>
+            <div class="P2">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/02.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Muster lokaler Kontraste</div>
+            </div>
+            <div class="P3">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/03.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Gesichtsmerkmale</div>
+            </div>
+            <div class="P4">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/03_png/04.png); height:70%;"></div>
+              <div style="display:flex; align-items:center; justify-content: center;">Gesicht</div>
+            </div>
+            <div class="DNN box-img" style="background-image: url(img/02_dl/02_svg/dnn.svg);"></div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Problem: Komplexe Domänen haben eine umfassende relationale Struktur, die als relationaler Graph dargestellt werden kann.
+
+
+<style>
+
+.container-network {
+  width:100%;
+  height:100%;
+  display: grid; 
+  grid-template-columns: 1fr 0.5fr 1fr; 
+  grid-template-rows: 2fr 1fr; 
+  gap: 60px 20px; 
+  grid-template-areas: 
+    "img1 img2 img3"
+    "img4 img4 img4";
+}
+.img1 { grid-area: img1; }
+.img2 { grid-area: img2; }
+.img3 { grid-area: img3; }
+.img4 { grid-area: img4; }
+
+.lastdot:before {
+   color: #2dc6d6;
+ }
+
+</style>
+
+
+<div class="slide-container">
+        <!--- Slide container (TOP) --->
+        <div class="slide-container-top vertical">
+          <div class="container-network">
+            <div class="img1 frame shadow">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/02_svg/network_complex.svg); height:85%;"></div>
+              <div class="subtext" style="text-align:center;"><b>Networks</b></div>
+            </div>
+            <div class="img2">
+              <div class="box-img" style="margin:10px; background-image: url(img/02_dl/02_svg/vs_arrow.svg); height:85%;"></div>
+            </div>
+            <div class="img3 frame shadow">
+              <div class="box-img" style="margin:20px 20px 0 20px; background-image: url(img/02_dl/02_svg/img_text.svg); height:85%;"></div>
+              <div class="subtext" style="text-align:center;"><b>Images & Text</b></div>
+            </div>
+            <div class="img4">
+              <ul class="square-list" style="margin-left:50px;">
+                <li><span>Beliebige Größe und komplexe topologische Struktur (d.h. keine räumliche Lokalitäten wie bei grids)</span></li>
+                <li><span>Keine feste Knotenreihenfolge oder Referenzpunkte</span></li>
+                <li><span>Oft dynamisch und mit multimodalen Merkmalen</span></li>
+              </ul>
+              <ul style="list-style-type: '➤ '; margin-left:50px;">
+                <li><span>Durch die explizite Modellierung von Beziehungen erreichen wir eine bessere Performance!</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--- Slide container (BOTTOM / SPACING) --->
+        <div class="slide-container-bottom"></div>
+</div>
+
+----
+
+<!-- .slide: class="align-top" -->
+
+#### Es gibt im Wesentlichen zwei große Arten von Daten, die als Graphen dargestellt werden können
+
+<style>
+/*GRID layout*/
+.grid-layout2 {
+  height:100%;
+  width:100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /*layout*/
+  grid-template-rows: 1.5fr 0.5fr;
+    grid-template-areas:
+    "T1 T2"
+    "B1 B1";
+  grid-gap: 50px 10px;
+}
+
+.T1 { grid-area: T1; }
+.T2 { grid-area: T2; }
+.B1 { grid-area: B1; }
+
+li span { color: white; }
+</style>
+
+<div class="slide-container">
+  <div class="slide-container-top">
+    <div class="grid-layout2">
+      <div class="T1">
+        <!--- Top Box 1 --->
+        <div class="box-text" style="font-size:25px;">
+          <p style="font-size:40px"><b>Netzwerke</b></p>
+          <hr>
+          <p>Auch bekannt als <b>Natural Graphs</b>:</p>
+          <ul class="square-list" style="margin-left:50px;">
+            <li>Soziale Netzwerke
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Die <b>Gesellschaft</b> ist eine Ansammlung von 7+ Milliarden Individuen</span></li>
+              </ul>  
+            </li>
+            <li>Kommunikation und Transaktionen
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Elektronische Geräte, Telefonate, Finanztransaktionen</span></li>
+              </ul>  
+            </li>
+            <li>Biomedizin
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Wechselwirkungen zwischen <b>Genen/Proteinen</b> regulieren das Leben</span></li>
+              </ul>  
+            </li>
+            <li>Hirnverbindungen
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Unsere <b>Gedanken</b> sind in den Verbindungen zwischen Milliarden von Neuronen verborgen</span></li>
+              </ul>  
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="T2">
+        <!--- Top Box 2 --->
+        <div class="box-text" style="font-size:25px;">
+          <p style="font-size:40px"><b>Graphen</b></p>
+          <hr>
+          <p>als Repräsentation:</p>
+          <ul class="square-list" style="margin-left:50px;">
+            <li><b>Information / Wissen</b> werden organisiert und verknüpft</li>
+            <li><b>Software</b> kann als Graph dargestellt werden</li>
+            <li><b>Ähnlichkeitsnetzwerke</b>
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Ähnliche Datenpunkte verbinden</span></li>
+              </ul>  
+            </li>
+            <li>Relationale Strukturen
+              <ul style="color: #2dc6d6; margin-left:50px;">
+                <li><span>Moleküle, Szenendiagramme, 3D-Formen, partikelbasierte Physiksimulationen</span></li>
+              </ul>  
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--- Bottom Box 3 --->
+      <div class="B1" style="text-align:center; font-size:40px;">⚡⚡ Manchmal ist die Unterscheidung zwischen Netzwerken und Graphen unscharf ⚡⚡</div>
+    </div>
+  </div>
+  <div class="slide-container-bottom">
+  </div>
+</div>
+
+----
 
 <!-- .slide: class="align-top" -->
 
